@@ -34,17 +34,17 @@ public class Pemilihan {
 
         double nilaiAkhir = (tugas *= 0.2)+(kuis *= 0.2)+(uts *= 0.3)+(uas *= 0.3);
 
-        if (nilaiAkhir >= 80) {
+        if (nilaiAkhir > 80) {
             nilaiHuruf = "A";
-        } else if (nilaiAkhir >= 73) {
+        } else if (nilaiAkhir > 73) {
             nilaiHuruf = "B+";
-        } else if (nilaiAkhir >= 65) {
+        } else if (nilaiAkhir > 65) {
             nilaiHuruf = "B";
-        } else if (nilaiAkhir >=60) {
+        } else if (nilaiAkhir > 60) {
             nilaiHuruf = "C+";
-        } else if (nilaiAkhir >= 50) {
+        } else if (nilaiAkhir > 50) {
             nilaiHuruf = "C";
-        } else if (nilaiAkhir >= 39) {
+        } else if (nilaiAkhir > 39) {
             nilaiHuruf = "D";
         } else {
             nilaiHuruf = "E";
