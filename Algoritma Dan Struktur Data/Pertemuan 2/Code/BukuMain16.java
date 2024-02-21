@@ -15,5 +15,8 @@ public class BukuMain16 {
         Buku16 bk2 = new Buku16("Self Reward", "Maheera Ayesha", 160, 29, 59000);
         bk2.terjual(11);
         bk2.tampilInformasi();
+
+        Buku16 bukuAmmar = new Buku16("Psychology of Money", "Morgan Housel", 200, 10, 100000);
+        bukuAmmar.tampilInformasi();
     }
 }
