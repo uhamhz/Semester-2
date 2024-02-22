@@ -1,6 +1,6 @@
 public class Buku16 {
     String judul, pengarang;
-    int halaman, stok, harga;
+    int halaman, stok, harga, total, terjual;
     
     public Buku16() {
         
@@ -26,6 +26,7 @@ public class Buku16 {
     void terjual(int jml) {
         if (stok > 0) {
             stok -= jml;
+            terjual = jml;
         } else {
             System.out.println("Stok Sudah Habis!");
         }
@@ -37,6 +38,11 @@ public class Buku16 {
 
     void gantiHarga(int hrg) {
         harga = hrg;
+    }
+
+    void hitungHargaTotal(){
+        total = harga * terjual;
+        System.out.println("Total Hasil Penjualan : " + total);
     }
     
 }
