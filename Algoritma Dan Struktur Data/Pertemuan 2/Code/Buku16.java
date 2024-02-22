@@ -1,6 +1,6 @@
 public class Buku16 {
     String judul, pengarang;
-    int halaman, stok, harga, total, terjual;
+    int halaman, stok, harga, total, terjual, diskon, hargaDiskon;
     
     public Buku16() {
         
@@ -44,5 +44,16 @@ public class Buku16 {
         total = harga * terjual;
         System.out.println("Total Hasil Penjualan : " + total);
     }
-    
+
+    void hitungDiskon(){
+        if (harga > 150000) {
+            diskon = (int) (0.12 * harga);
+            System.out.println("Anda Mendapatkan Diskon Sebesar : " + diskon);
+        } if (harga >= 75000) {
+            diskon = (int) (0.05 * harga);
+            System.out.println("Anda Mendapatkan Diskon Sebesar : " + diskon);
+        } else {
+            System.out.println("Anda tidak mendapat Diskon");
+        }
+    }
 }
