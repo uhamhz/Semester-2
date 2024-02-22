@@ -18,5 +18,11 @@ public class BukuMain16 {
 
         Buku16 bukuAmmar = new Buku16("Psychology of Money", "Morgan Housel", 200, 10, 100000);
         bukuAmmar.tampilInformasi();
+        bukuAmmar.terjual(10);
+        bukuAmmar.total = bukuAmmar.hitungHargaTotal();
+        System.out.println("Total Hasil Penjualan : " + bukuAmmar.total);
+        bukuAmmar.diskon = bukuAmmar.hitungDiskon();
+        System.out.println("Anda Mendapatkan Diskon Sebesar : " + bukuAmmar.diskon);
+        System.out.println("Total Yang Harus Dibayar : " + bukuAmmar.hitungHargaBayar());
     }
 }
