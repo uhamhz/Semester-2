@@ -1,6 +1,6 @@
 public class Buku16 {
     String judul, pengarang;
-    int halaman, stok, harga, total, terjual, diskon, hargaDiskon;
+    int halaman, stok, harga, total, terjual, diskon;
     
     public Buku16() {
         
@@ -40,20 +40,22 @@ public class Buku16 {
         harga = hrg;
     }
 
-    void hitungHargaTotal(){
-        total = harga * terjual;
-        System.out.println("Total Hasil Penjualan : " + total);
+    int hitungHargaTotal(){
+
+        return (int) harga * terjual;
     }
 
-    void hitungDiskon(){
-        if (harga > 150000) {
-            diskon = (int) (0.12 * harga);
-            System.out.println("Anda Mendapatkan Diskon Sebesar : " + diskon);
-        } if (harga >= 75000) {
-            diskon = (int) (0.05 * harga);
-            System.out.println("Anda Mendapatkan Diskon Sebesar : " + diskon);
+    int hitungDiskon(){
+        if (total > 150000) {
+            return (int) (0.12 * total);
+        } if (total >= 75000) {
+            return (int) (0.05 * total);
         } else {
-            System.out.println("Anda tidak mendapat Diskon");
+            return 0; 
         }
+    }
+
+    int hitungHargaBayar(){
+        return total - diskon;
     }
 }
