@@ -38,7 +38,7 @@ public class Dragon16 {
     }
 
     void printPosition() {
-        System.out.printf("Anda Berada di X : %d Y : %d", x  , y );
+        System.out.printf("Anda Berada di X : %d Y : %d\n", x  , y );
     }
 
     void detectCollision(int x, int y) {
