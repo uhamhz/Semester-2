@@ -6,34 +6,30 @@ public class Dragon16 {
     int x, y, width, height;
 
     void moveLeft() {
+        x -= 1;
         if (x < 0 || x > width) {
             detectCollision(x, y);
-        } else {
-            x -= 1;
         }
     }
 
     void moveRight() {
+        x += 1;
         if (x < 0 || x > width) {
             detectCollision(x, y);
-        } else {
-            x += 1;
         }
     }
 
     void moveUp() {
+        y -= 1;
         if (y < 0 || y > height) {
             detectCollision(x, y);
-        } else {
-            y -= 1;
         }
     }
 
     void moveDown() {
+        y += 1;
         if (y < 0 || y > height) {
             detectCollision(x, y);
-        } else {
-            y += 1;
         }
     }
 
