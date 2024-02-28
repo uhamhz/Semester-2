@@ -5,7 +5,7 @@ public class DragonMain16 {
         player.y = 0;
         player.width = 5;
         player.height = 4;
-        player.moveRight();
+        player.moveLeft();
         player.printPosition();
     }
 }
