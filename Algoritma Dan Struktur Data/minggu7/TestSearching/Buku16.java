@@ -2,10 +2,10 @@ package TestSearching;
 
 public class Buku16 {
 
-    int kodeBuku, tahunTerbit, stok;
-    String judul, pengarang;
+    int tahunTerbit, stok;
+    String judul, pengarang, kodeBuku;
 
-    Buku16(int kodeBuku, String judul, String pengarang, int tahunTerbit, int stok) {
+    Buku16(String kodeBuku, String judul, String pengarang, int tahunTerbit, int stok) {
         this.kodeBuku = kodeBuku;
         this.judul = judul;
         this.pengarang = pengarang;

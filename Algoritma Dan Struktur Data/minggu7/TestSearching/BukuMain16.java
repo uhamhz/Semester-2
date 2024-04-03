@@ -15,7 +15,7 @@ public class BukuMain16 {
         for (int i = 0; i < jumBuku; i++) {
             System.out.println("-----------------------");
             System.out.print("Kode Buku \t : ");
-            int kodeBuku = s.nextInt();
+            String kodeBuku = s.next();
             System.out.print("Judul Buku \t : ");
             String judul = s1.nextLine();
             System.out.print("Tahun Terbit \t : ");
@@ -25,24 +25,32 @@ public class BukuMain16 {
             System.out.print("Stok \t\t : ");
             int stok = s.nextInt();
 
+            s.nextLine();
+            
+
             Buku16 m = new Buku16(kodeBuku, judul, pengarang, tahunTerbit, stok);
             data.tambah(m);
         }
         System.out.println("----------------------");
         System.out.println("----------------------");
         System.out.println("Pencarian Data : ");
-        System.out.println("Masukan Kode Buku yang ingin dicari : ");
-        System.out.print("Kode Buku  : ");
-        int cari = s.nextInt();
+        System.out.println("Masukan Judul Buku yang ingin dicari : ");
+        String cari = s.nextLine();
         System.out.println("==========================");
         System.out.println("Menggunakan Sequential Search");
-        int posisi = data.FindSeqSearch(cari);
+        int posisi = data.FindJudSeqSearch(cari);
         data.Tampilposisi(cari, posisi);
         Buku16 dataBuku = data.findBuku(cari);
-        dataBuku.tampilDataBuku();
+        if (dataBuku == null) {
+            System.out.println("Data Tidak Ditemukan");
+            
+        }else{
+            dataBuku.tampilDataBuku();
+        }
         System.out.println("=========================");
         System.out.println("Menggunakan Binary Search");
-        posisi = data.FindBinarySearch(cari, 0, jumBuku - 1);
+        data.Sorting();
+        posisi = data.FindJudBinary(cari, 0, jumBuku - 1);
         data.Tampilposisi(cari, posisi);
         data.TampilData(cari, posisi);
     }   
