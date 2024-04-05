@@ -40,18 +40,10 @@ public class BukuMain16 {
         System.out.println("Menggunakan Sequential Search");
         int posisi = data.FindJudSeqSearch(cari);
         data.Tampilposisi(cari, posisi);
-        Buku16 dataBuku = data.findBuku(cari);
-        if (dataBuku == null) {
-            System.out.println("Data Tidak Ditemukan");
-            
-        }else{
-            dataBuku.tampilDataBuku();
-        }
         System.out.println("=========================");
         System.out.println("Menggunakan Binary Search");
         data.Sorting();
         posisi = data.FindJudBinary(cari, 0, jumBuku - 1);
         data.Tampilposisi(cari, posisi);
-        data.TampilData(cari, posisi);
     }   
 }

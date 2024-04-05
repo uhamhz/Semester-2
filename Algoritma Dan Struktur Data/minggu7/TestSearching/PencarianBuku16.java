@@ -52,10 +52,12 @@ public class PencarianBuku16 {
     }
 
     public void Tampilposisi(String x, int pos) {
-        if (pos != -1) {
-            System.out.println("Data : " + x + " ditemukan pada indeks ke-" + pos);
-        } else {
+        if (pos == -1) {
             System.out.println("Data : " + x + " tidak ditemukan");
+        } else if (pos == -2) {
+            System.out.println("Data : " + x + " Ditemukan Lebih Dari 1");
+        } else {
+            System.out.println("Data : " + x + " ditemukan pada indeks ke-" + pos);
         }
     }
 
@@ -76,26 +78,32 @@ public class PencarianBuku16 {
 
     public int FindJudSeqSearch(String cari) {
         int posisi = -1;
+        int count = 0;
         for (int j = 0; j < listBk.length; j++) {
             if (listBk[j].judul.equalsIgnoreCase(cari)) {
                 posisi = j;
-                break;
+                count++;
             }
         }
-        return posisi;
+        if (count == 0) {
+            return -1;
+        } else if (count == 1) {
+            return posisi;
+        } else {
+            return -2;
+        }
     }
 
-    public int Sorting(){
+    public void Sorting() {
         for (int i = 0; i < listBk.length - 1; i++) {
-            for (int j = i + 1; j < listBk.length; j++) {
-                if (listBk[i].kodeBuku.compareTo(listBk[j].kodeBuku) > 0) {
-                    Buku16 temp = listBk[i];
-                    listBk[i] = listBk[j];
-                    listBk[j] = temp;
+            for (int j = 0; j < listBk.length - 1 - i; j++) {
+                if (listBk[j].judul.compareTo(listBk[j + 1].judul) > 0) {
+                    Buku16 temp = listBk[j];
+                    listBk[j] = listBk[j + 1];
+                    listBk[j + 1] = temp;
                 }
             }
         }
-        return 0;
     }
 
     public int FindJudBinary(String cari, int left, int right) {
@@ -103,7 +111,17 @@ public class PencarianBuku16 {
         if (right >= left) {
             mid = (left + right) / 2;
             if (cari.equalsIgnoreCase(listBk[mid].judul)) {
-                return mid;
+                if (mid >= 0 && mid < listBk.length - 1) {
+                    if (listBk[mid].judul.equalsIgnoreCase(listBk[mid + 1].judul)) {
+                        return -2;
+                    }
+                }  if (mid > 0 && mid <= listBk.length - 1) {
+                    if (listBk[mid].judul.equalsIgnoreCase(listBk[mid - 1].judul)) {
+                        return -2;
+                    }
+                } else {
+                    return mid;
+                }
             } else if (listBk[mid].judul.compareTo(cari) > 0) {
                 return FindJudBinary(cari, left, mid - 1);
             } else {
