@@ -61,6 +61,17 @@ public class Gudang16 {
         }
     }
 
+    public Barang16 lihatBarangTerbawah() {
+        if (!cekKosong()) {
+            Barang16 barangTerbawah = tumpukan[0];
+            System.out.println("Barang terbawah : " + barangTerbawah.nama);
+            return barangTerbawah;
+        } else {
+            System.out.println("Tumpukan barang kosong");
+            return null;
+        }
+    }
+
     public void tampilkanBarang() {
         if (!cekKosong()) {
             System.out.println("Rincian tumpukan barang di Gudang");
@@ -85,5 +96,29 @@ public class Gudang16 {
             biner = biner + stack.pop();
         }
         return biner;
+    }
+
+    public Barang16 barangNama(String cariNama) {
+        for (int i = 0; i < tumpukan.length; i++) {
+            if (tumpukan[i].nama.equalsIgnoreCase(cariNama)) {
+                System.out.println("Barang dengan kode " + tumpukan[i].kode + " ditemukan adalah : " + tumpukan[i].nama);
+                return tumpukan[i];
+            } else {
+                System.out.println("Barang tidak ditemukan");
+            }
+        }
+        return null;
+    }
+
+    public Barang16 barangKode(int cariKode) {
+        for (int i = 0; i < tumpukan.length; i++) {
+            if (tumpukan[i].kode == cariKode) {
+                System.out.println("Barang dengan kode " + tumpukan[i].kode + " ditemukan adalah : " + tumpukan[i].nama);
+                return tumpukan[i];
+            } else {
+                System.out.println("Barang tidak ditemukan");
+            }
+        }
+        return null;
     }
 }
