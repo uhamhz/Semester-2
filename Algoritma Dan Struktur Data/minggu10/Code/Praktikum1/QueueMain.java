@@ -19,17 +19,25 @@ public class QueueMain {
             pilih = sc.nextInt();
             switch (pilih) {
                 case 1:
-                    System.out.print("Masukan data baru : ");
-                    int dataMasuk = sc.nextInt();
-                    Q.Enqueue(dataMasuk);
-                    break;
+                    if (!Q.isFull()) {
+                        System.out.print("Masukan data baru : ");
+                        int dataMasuk = sc.nextInt();
+                        Q.Enqueue(dataMasuk);
+                        break;
+                    }else{
+                        return;
+                    }
 
                 case 2:
+                if (!Q.isEmpty()) {
                     int dataKeluar = Q.Dequeue();
                     if (dataKeluar != 0) {
                         System.out.println("Data yang dikeluarkan : " + dataKeluar);
                         break;
                     }
+                }else{
+                    return;
+                }
 
                 case 3:
                     Q.print();
